@@ -1,0 +1,182 @@
+styles.css
+
+.container {
+    background-color: #343a40; /* Gris oscuro */
+    color: #ccc;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+}
+
+/* assets/css/style.css */
+
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f8f9fa; /* Un gris claro muy sutil */
+    color: #343a40;
+    line-height: 1.6;
+}
+
+main.container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+h2 {
+    color: #007bff; /* Azul primario para títulos */
+    margin-bottom: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+h2 .fas {
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
+hr {
+    border-top: 2px solid #e9ecef;
+    margin-bottom: 30px;
+}
+
+/* Estilos para el Formulario de Crear/Editar */
+.contact-form-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada pero suave */
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #dee2e6; /* Borde sutil */
+}
+
+.contact-form-card label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px; /* Espacio debajo de la etiqueta */
+}
+
+.contact-form-card .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.contact-form-card textarea.form-control {
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 100px;
+}
+
+/* Estilos para los botones */
+.contact-form-card .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-form-card .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.contact-form-card .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-form-card .btn-secondary:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+}
+
+/* Estilos para la tabla de contactos (index.php) */
+.table {
+    border-radius: 8px;
+    overflow: hidden; /* Para que los bordes redondeados afecten a thead y tbody */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.table thead th {
+    background-color: #343a40; /* Fondo oscuro */
+    color: #ffffff;
+    border-bottom: none; /* Eliminar el borde inferior para thead */
+    padding: 15px;
+}
+
+.table tbody tr {
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1; /* Resaltar fila al pasar el mouse */
+}
+
+.table tbody td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #e9ecef !important; /* Un poco más oscuro que el fondo del body */
+    color: #6c757d !important;
+    font-size: 0.9em;
+    padding: 20px 0 !important;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Estilos para la tarjeta de ver contacto */
+.card-header.bg-dark {
+    background-color: #343a40 !important;
+    border-bottom: 1px solid #495057;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-body .row {
+    margin-bottom: 15px; /* Espacio entre filas de detalles */
+}
+
+.card-body strong.text-muted {
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.card-body p.border {
+    font-size: 0.95em;
+    background-color: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 5px !important;
+}
+
+/* Ajustes para alertas */
+.alert {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid; /* Borde distintivo */
+    font-weight: 500;
+}
+
+.alert-success { border-color: #28a745; }
+.alert-danger { border-color: #dc3545; }
+.alert-warning { border-color: #ffc107; }
+.alert-info { border-color: #17a2b8; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form-card {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
