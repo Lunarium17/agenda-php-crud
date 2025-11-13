@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             modalTitle.textContent = 'Confirmar Eliminación';
             modalBody.innerHTML = '¿Estás seguro de que deseas eliminar a <strong>' + 
-                                  // Sanitización básica en JS (aunque el nombre viene de la BD sanitizada)
+                                  // Sanitización básica en JS
                                   contactName.replace(/</g, "&lt;").replace(/>/g, "&gt;") + 
                                   '</strong>?';
             deleteFormInput.value = contactId;

@@ -2,25 +2,19 @@
 require 'config/db.php'; // Incluye PDO
 require 'templates/header.php';
 
-// --- ESTA ES LA LÓGICA CORREGIDA ---
-
-// 1. Inicializar variables
 $termino_busqueda = '';
 $params = []; // Un array de parámetros vacío por defecto
 $sql = "SELECT id, nombre, apellido, telefono, email FROM contactos ORDER BY nombre ASC";
 
-// 2. Comprobar si hay búsqueda
 if (isset($_GET['busqueda']) && !empty(trim($_GET['busqueda']))) {
     $termino_busqueda = trim($_GET['busqueda']);
     
-    // 3. Si hay búsqueda, CAMBIAR el SQL y LLENAR los parámetros
     $sql = "SELECT id, nombre, apellido, telefono, email FROM contactos 
             WHERE nombre LIKE :nombre 
             OR apellido LIKE :apellido 
             OR telefono LIKE :telefono
             ORDER BY nombre ASC";
             
-    // 4. (LA CLAVE) Añadir comodines '%' para la búsqueda LIKE
     $like_termino = '%' . $termino_busqueda . '%';
     $params = [
         ':nombre' => $like_termino,
@@ -32,9 +26,6 @@ if (isset($_GET['busqueda']) && !empty(trim($_GET['busqueda']))) {
 try {
     $stmt = $pdo->prepare($sql);
     
-    // 5. (LA SOLUCIÓN) Ejecutar con el array $params.
-    // Si no hay búsqueda, $params estará vacío (execute([])), lo cual es correcto.
-    // Si hay búsqueda, $params tendrá [':termino' => '%busqueda%'], lo cual es correcto.
     $stmt->execute($params); 
     
     $contactos = $stmt->fetchAll();
@@ -45,7 +36,7 @@ try {
     $_SESSION['tipo_mensaje'] = 'danger';
     $contactos = []; // Evita errores si la consulta falla
 }
-// --- FIN DE LA LÓGICA CORREGIDA ---
+
 ?>
 
 <div class="row mb-3">

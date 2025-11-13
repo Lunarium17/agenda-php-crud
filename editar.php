@@ -11,7 +11,7 @@ if (!$id || !filter_var($id, FILTER_VALIDATE_INT)) {
     exit;
 }
 
-// --- PROCESAMIENTO POST (Actualización) ---
+// --- PROCESAMIENTO POST ---
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Validar que el ID del POST coincida (y esté presente)
@@ -93,15 +93,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['tipo_mensaje'] = "danger";
     }
     
-    // Si hay error, recargamos los datos desde el POST para que el usuario no pierda lo que escribió
-    // (excepto que la BD falle, ahí mantenemos los de la BD)
+
     $contacto = $_POST;
     $contacto['id'] = $id; // Aseguramos que el ID esté presente
 }
 
-
-// --- Carga de datos GET (Para prellenar el formulario) ---
-// Solo se ejecuta si NO es un POST (o si el POST redirigió)
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     try {
         $stmt = $pdo->prepare("SELECT * FROM contactos WHERE id = :id");
